@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-const apiKey = "&appid=9362a48d355b9f13eed8bf1bde52af3f";
+const apiKey = "&units=metric&appid=9362a48d355b9f13eed8bf1bde52af3f";
 let baseURL ='http://api.openweathermap.org/data/2.5/weather?zip=';
 
 /* Global Variables */
@@ -58,9 +58,9 @@ const updateUI = async () => {
     try{
         const allData = await request.json();
         console.log(allData);
-        document.getElementById('date').innerHTML = allData[0].date;
-        document.getElementById('temp').innerHTML = allData[0].temp;
-        document.getElementById('content').innerHTML = allData[0].feelings;
+        document.getElementById('date').innerHTML = allData.date;
+        document.getElementById('temp').innerHTML = allData.temp;
+        document.getElementById('content').innerHTML = allData.feelings;
     }catch(error){
       console.log("error", error);
     }
